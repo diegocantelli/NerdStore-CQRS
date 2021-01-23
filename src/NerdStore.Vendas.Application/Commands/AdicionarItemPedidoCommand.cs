@@ -4,6 +4,7 @@ using NerdStore.Core.Messages;
 
 namespace NerdStore.Vendas.Application.Commands
 {
+    //O Comand tem apenas uma única funcionalidade, que é Adicionar um item de pedido
     public class AdicionarItemPedidoCommand : Command
     {
         public Guid ClienteId { get; private set; }
@@ -23,11 +24,13 @@ namespace NerdStore.Vendas.Application.Commands
 
         public override bool EhValido()
         {
+            // Faz a validação com base no Fluent Validation
             ValidationResult = new AdicionarItemPedidoValidation().Validate(this);
             return ValidationResult.IsValid;
         }
     }
 
+    //Utilização do Fluent Validation
     public class AdicionarItemPedidoValidation : AbstractValidator<AdicionarItemPedidoCommand>
     {
         public AdicionarItemPedidoValidation()

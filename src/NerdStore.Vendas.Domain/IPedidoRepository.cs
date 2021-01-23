@@ -5,6 +5,9 @@ using NerdStore.Core.Data;
 
 namespace NerdStore.Vendas.Domain
 {
+    //A implementação fica no projeto de Data
+    //A interface do repositório específico fica dentro do domínio
+    //A interface genéricia fica em INfra
     public interface IPedidoRepository : IRepository<Pedido>
     {
         Task<Pedido> ObterPorId(Guid id);

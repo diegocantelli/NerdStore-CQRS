@@ -241,6 +241,7 @@ namespace NerdStore.Vendas.Application.Commands
 
         private bool ValidarComando(Command message)
         {
+            //Irá chamar o método de acordo com a classe que foi passada no message
             if (message.EhValido()) return true;
 
             foreach (var error in message.ValidationResult.Errors)
