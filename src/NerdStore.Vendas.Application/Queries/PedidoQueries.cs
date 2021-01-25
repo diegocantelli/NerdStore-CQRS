@@ -7,6 +7,9 @@ using NerdStore.Vendas.Domain;
 
 namespace NerdStore.Vendas.Application.Queries
 {
+    // Esta classe é utilizada pois não queremos efetuar estes procedimentos nem no repositório 
+    // e nem na entidade.
+    // Funciona como um serviço de domínio
     public class PedidoQueries : IPedidoQueries
     {
         private readonly IPedidoRepository _pedidoRepository;

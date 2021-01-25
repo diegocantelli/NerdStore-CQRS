@@ -44,7 +44,10 @@ namespace NerdStore.WebApp.MVC.Setup
 
             // Vendas
             services.AddScoped<IPedidoRepository, PedidoRepository>();
+
+            //Registrando a query na injeção de dependêcia
             services.AddScoped<IPedidoQueries, PedidoQueries>();
+
             services.AddScoped<VendasContext>();
 
             //Registrando a injeção de dependência do Handler do command de AdicionarItemPedido
